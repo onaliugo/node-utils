@@ -1,9 +1,16 @@
 var fs = require('fs');
 var del = require('del');
 var glob = require('glob');
+var extend = require('extend');
 var mkdirp = require('mkdirp');
 
 var Utils = function (opts) {
+	var defaultOpts = {
+		silent: false
+	};
+
+	opts = extend( true, defaultOpts, opts );
+
 	return {
 		opts: opts,
 		log: this.log,
