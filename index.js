@@ -58,6 +58,9 @@ var Utils = function (opts) {
 		},
 
 		// Else
+		trim: function (str) {
+			return str.replace(/(?:(?:^|\n)\s+|\s+(?:$|\n))/g,'').replace(/\s+/g,'');
+		},
 		each: function (path) {
 			return glob.sync( path );
 		},
