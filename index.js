@@ -23,27 +23,27 @@ var Utils = function (opts) {
 		// Tests
 		testVal: function (val, expectedType, name) {
 			if (typeof val !== expectedType)
-				throw new Error( '> ' + name + ' must return ' + expectedType );
+				throw new Error( name + ' must return ' + expectedType );
 		},
 		testFn: function (fn, args, expectedType, name) {
 			if (typeof fn( args ) !== expectedType)
-				throw new Error( '> ' + name + ' must return ' + expectedType );
+				throw new Error( name + ' must return ' + expectedType );
 		},
 
 		// Remove
 		del: function (path) {
 			del.sync( path );
-			return this.log('> Cleared: ' + path);
+			return this.log('Cleared: ' + path);
 		},
 
 		// Create
 		newFile: function (path, content) {
 			fs.writeFileSync( path, content );
-			return this.log('> Created file: ' + path);
+			return this.log('Created file: ' + path);
 		},
 		newFolder: function (path) {
 			mkdirp.sync( path );
-			return this.log('> Created folder: ' + path);
+			return this.log('Created folder: ' + path);
 		},
 
 		// Clear
@@ -72,7 +72,7 @@ var Utils = function (opts) {
 
 Utils.prototype.log = function (content) {
 	if (!this.opts.silent)
-		return console.log(content);
+		return console.log('> ' + content);
 };
 
 module.exports = Utils;

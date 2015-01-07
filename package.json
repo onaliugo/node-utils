@@ -1,6 +1,6 @@
 {
   "name": "uo-node-utils",
-  "version": "0.0.21",
+  "version": "0.0.22",
   "description": "Bunch of NodeJS toosl",
   "main": "index.js",
   "scripts": {
