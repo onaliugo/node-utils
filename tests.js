@@ -10,7 +10,7 @@ u.addFunc({
 	content: function () {
 		console.log( 'this' );
 	}
-})
+});
 
 u.fnTest();
 
@@ -21,7 +21,7 @@ u.newFile('test/hello.txt', 'Hello world!');
 console.log( u.readFile('test/hello.txt') );
 u.each( 'test/**/*' ).forEach( function (file) {
 	u.replaceInFile( file, 'world', 'you' );
-})
+});
 console.log( u.readFile('test/hello.txt') );
 
 u.clearFolder('test/');
