@@ -38,6 +38,11 @@ var Utils = function (opts) {
 
 		// Create
 		newFile: function (path, content) {
+			var folderPath = path.split('/');
+			folderPath.pop();
+			folderPath = folderPath.join('/');
+
+			this.newFolder(folderPath);
 			fs.writeFileSync(path, content);
 			return this.log('Created file: ' + path);
 		},

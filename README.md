@@ -5,20 +5,30 @@
 
   var utils = new Utils ({
   	silent: false
+  });  
+
+  u.addFunc({
+    name: 'fnTest',
+    content: function () {
+      console.log( 'this' );
+    }
   });
 
-  utils.newFolder( 'test/' );
+  u.fnTest();
 
-  u.newFile( 'test/hello.txt', 'Hello world!' );
+  u.newFolder('foo');
 
-  console.log( u.readFile( 'test/hello.txt' ) );
+  u.newFile('foo/bar/baz.txt', 'Hello world!');
 
-  u.each( 'test/**/*' ).forEach( function (file) {
-    u.replaceInFile( file, 'world', 'you' );
+  // console.log(u.readFile('foo/bar/baz.txt'));
+
+  u.each( 'foo/bar/*' ).forEach(function (file) {
+    u.replaceInFile(file, 'world', 'you' );
   });
 
-  console.log( u.readFile( 'test/hello.txt' ) );
+  // console.log(u.readFile('foo/bar/baz.txt'));
 
-  u.clearFolder( 'test/' );
-  u.del( 'test/' );
+  u.clearFolder('foo/');
+
+  u.del('foo/');
 ```
