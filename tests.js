@@ -18,6 +18,7 @@ u.fnTest();
 u.newFolder('foo');
 
 u.newFile('foo/bar/baz.txt', 'Hello world!');
+u.newFile('foo/bar/foo.txt', 'Hello world!');
 
 // console.log(u.readFile('foo/bar/baz.txt'));
 

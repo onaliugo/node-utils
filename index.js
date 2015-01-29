@@ -42,7 +42,9 @@ var Utils = function (opts) {
 			folderPath.pop();
 			folderPath = folderPath.join('/');
 
-			this.newFolder(folderPath);
+			if (!fs.existsSync(folderPath))
+				this.newFolder(folderPath);
+
 			fs.writeFileSync(path, content);
 			return this.log('Created file: ' + path);
 		},
