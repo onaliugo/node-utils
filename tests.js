@@ -1,33 +1,21 @@
-var u = require('./index.js');
+var Utils = require('./index.js');
 
-u = new u ({
-	silent: false
-});
+// Create a folder
+Utils.create.folder('__foo__');
 
+// Create a file deeply in a folder
+Utils.create.file('foo/bar/baz/foo.txt', 'Foo');
 
-u.addFunc({
-	name: 'fnTest',
-	content: function () {
-		console.log( 'this' );
-	}
-});
+// Update content
+Utils.replaceInFile('foo/bar/baz/foo.txt', 'F', 'B');
+Utils.replaceInFile('foo/bar/baz/foo.txt', /(o{2})/, '\n O\n  O' );
 
-u.fnTest();
+// Test result
+// console.log(Utils.readFile('foo/bar/baz/foo.txt'));
 
+Utils.trim('foo/bar/baz/foo.txt');
 
-u.newFolder('foo');
-
-u.newFile('foo/bar/baz.txt', 'Hello world!');
-u.newFile('foo/bar/foo.txt', 'Hello world!');
-
-// console.log(u.readFile('foo/bar/baz.txt'));
-
-u.each( 'foo/bar/*' ).forEach(function (file) {
-	u.replaceInFile(file, 'world', 'you' );
-});
-
-// console.log(u.readFile('foo/bar/baz.txt'));
-
-u.clearFolder('foo/');
-
-u.del('foo/');
+// Remove tests
+Utils.del('__foo__');
+Utils.clear('foo');
+Utils.del('foo');
