@@ -1,7 +1,15 @@
 # Node-utils
 
 ```js
-var Utils = require( 'uo-node-utils' );
+var Utils = require('uo-node-utils');
+
+// extend Utils
+Utils.extend({
+	name: 'logger',
+	content: function (str) {
+		return console.log(str);
+	}
+});
 
 // Create a folder
 Utils.create.folder('__foo__');
@@ -18,7 +26,7 @@ Utils.replaceInFile('foo/bar/baz/foo.txt', /(o{2})/, '\n O\n  O' );
 
 Utils.trim('foo/bar/baz/foo.txt');
 
-// Remove tests
+// Remove test files
 Utils.del('__foo__');
 Utils.clear('foo');
 Utils.del('foo');

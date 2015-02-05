@@ -21,11 +21,6 @@ var Utils = {
     return Utils;
   },
 
-  // Add functionalities
-  addFunc: function (obj) {
-    Utils[obj.name] = obj.content;
-  },
-
   /* Utils.check.value();
    * Utils.check.fn();
    * Test typeof of a returned value
@@ -37,7 +32,7 @@ var Utils = {
       }
     },
     fn: function (fn, args, expectedType, name) {
-      if (typeof fn( args ) !== expectedType) {
+      if (typeof fn(args) !== expectedType) {
         throw new Error(name + ' must return ' + expectedType);
       }
     },
