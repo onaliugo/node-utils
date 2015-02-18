@@ -1,8 +1,8 @@
 {
   "name": "uo-node-utils",
-  "version": "0.0.41",
-  "description": "Bunch of NodeJS toosl",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Bunch of NodeJS tools",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -24,7 +24,6 @@
   "homepage": "https://github.com/onaliugo/node-utils",
   "dependencies": {
     "del": "^1.1.1",
-    "extend": "^2.0.0",
     "glob": "^4.3.2",
     "mkdirp": "^0.5.0"
   }
