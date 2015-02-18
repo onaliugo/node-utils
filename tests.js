@@ -12,7 +12,8 @@ Utils.logger('test');
 
 // Create a folder
 Utils.create.folder('__foo__');
-
+Utils.create.folder('__foo__');
+return
 // Create a file deeply in a folder
 Utils.create.file('foo/bar/baz/foo.txt', 'FooBarBaz!');
 
