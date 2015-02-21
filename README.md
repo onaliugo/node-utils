@@ -1,7 +1,5 @@
 # Node-utils
 
-**'uo-node-utils' is a bunch of tools for NodeJS**
-
 **Feel free to contribute!**
 
 ```js
