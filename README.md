@@ -17,32 +17,6 @@ Utils.extend({
 	}
 });
 
-Utils.extend([
-	{
-		name: 'logA',
-		content: function () {
-			console.log('__logA__');
-			return 'logA';
-		}
-	},
-	{
-		name: 'logB',
-		content: function () {
-			console.log('__logB__');
-			return 'logB';
-		}
-	}
-]);
-
-Utils.logA();
-Utils.logB();
-
-
-
-/* check.value();
- * check.fn();
- * Check typeof a value, or a returned value */
-
 /* create.file();
  * Create a new file (even deep into a folder)
 
@@ -50,7 +24,10 @@ Utils.logB();
  * Create a folder
  * Support array as argument */
 
+
+Utils.create.folder(['my', 'foo', 'bar']);
 Utils.create.folder('my/new/folder');
+
 Utils.create.file('my/new/folder/content.txt', 'Hello.');
 Utils.create.file('other/folder/content.txt', 'You.');
 
@@ -128,6 +105,6 @@ Utils.clear.folder('other');
  * Remove any file and folders
  * Support array as argument */
 
-Utils.del(['my', 'other']);
+Utils.del(['my', 'foo', 'bar']);
 
 ```
